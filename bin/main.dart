@@ -1,10 +1,11 @@
 void main() {
-  List names = ['ali', 'mamad', 'reza'];
-  var x = 1;
-  var max = 3;
+  int time = 13;
+  switch (time) {
+    case 13:
+      print('Good Afternoon');
+      break;
 
-  do {
-    print(names[x - 1]);
-    x++;
-  } while (x <= max);
+    default:
+      print('Invalid value');
+  }
 }
