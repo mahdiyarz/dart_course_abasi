@@ -1,7 +1,13 @@
 void main() {
   List names = ['ali', 'mamad', 'reza'];
-  names.add('meti');
-  names.insert(1, 'sina');
+  int j = 0;
 
-  print(names);
+  for (var name in names) {
+    j++;
+    print('$j-$name');
+  }
+
+  for (var i = 1; i <= names.length; i++) {
+    print(i);
+  }
 }
