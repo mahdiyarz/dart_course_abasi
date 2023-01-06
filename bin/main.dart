@@ -1,11 +1,9 @@
 void main() {
-  int time = 13;
-  switch (time) {
-    case 13:
-      print('Good Afternoon');
-      break;
+  var test = 'my test';
 
-    default:
-      print('Invalid value');
-  }
+  var upperCase = test.toUpperCase();
+  print(upperCase);
+
+  var lowerCase = upperCase.toLowerCase();
+  print(lowerCase);
 }
