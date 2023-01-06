@@ -1,8 +1,10 @@
 void main() {
-  var i = 0;
+  List names = ['ali', 'mamad', 'reza'];
+  var x = 1;
+  var max = 3;
 
-  while (i < 5) {
-    print('Hello world');
-    i++;
-  }
+  do {
+    print(names[x - 1]);
+    x++;
+  } while (x <= max);
 }
