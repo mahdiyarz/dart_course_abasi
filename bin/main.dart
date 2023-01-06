@@ -1,8 +1,10 @@
 void main() {
-  PetrolEngine().start();
-  DieselEngine().start();
-  Platform().start();
-  BenzS500();
+  // PetrolEngine().start();
+  // DieselEngine().start();
+  // Platform().start();
+  // BenzS500().benzS500();
+  // BenzS500().drive();
+  BenzS500().newBenzS500('red');
 }
 
 abstract class Engine {
@@ -33,10 +35,44 @@ class Platform extends PetrolEngine {
   }
 }
 
-class BenzS500 extends Platform {
-  BenzS500() {
+class Seat {
+  void configSeat() {}
+}
+
+mixin Remote {
+  void lock() {
+    print('Lock doors');
+  }
+
+  void unlock() {
+    print('Unlock doors');
+  }
+}
+
+class BenzS500 extends Platform with Remote implements Seat {
+  late String color;
+
+  benzS500() {
     horsePower = 400;
     print('horse power is $horsePower');
     print('cylinders are $cylinder');
+  }
+
+  @override
+  void configSeat() {
+    print('Config seat by driver');
+  }
+
+  void drive() {
+    unlock();
+    configSeat();
+    print('enjoy your driving');
+  }
+
+  newBenzS500(String customColor) {
+    super.horsePower = 500;
+    this.color = customColor;
+    print('This is my car. it has $horsePower horse power and it\'s $color');
+    drive();
   }
 }
