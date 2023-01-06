@@ -1,6 +1,6 @@
 void main() {
-  var test = 'my test';
+  var names = 'ali mamad reza';
 
-  var replace = test.replaceAll('my', 'your');
-  print(replace);
+  var splitNames = names.split(' ');
+  print(splitNames);
 }
