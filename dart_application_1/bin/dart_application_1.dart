@@ -1,8 +1,11 @@
 void main() {
   var result = Future.delayed(
     Duration(seconds: 2),
-    () => 'Web Result',
+    () => Exception('Web Result Error'),
   );
-  result.then((value) => print(value));
+  result
+      .then((successValue) => print('Value is: $successValue'))
+      .catchError((errorValue) => print('Error is: $errorValue'))
+      .whenComplete(() => print('job done'));
   print('The End');
 }
