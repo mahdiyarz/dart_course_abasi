@@ -1,5 +1,5 @@
 void main() {
-  var result = Future.value(2);
+  var result = Future.error(Exception('Future has error'));
   result.then((value) => print(value));
   print('The End');
 }
