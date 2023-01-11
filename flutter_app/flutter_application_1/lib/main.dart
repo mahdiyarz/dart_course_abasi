@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'integer_stream.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -10,17 +12,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder(
-        initialData: 'Waiting...',
-        future: Future.delayed(const Duration(seconds: 4), () => 'Hello World'),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return Text(snapshot.data as String);
-          } else {
-            return Text(snapshot.error as String);
-          }
-        },
-      ),
-    );
+        body: StreamBuilder(
+      initialData: 'wait...',
+      stream: IntegerStream().stream,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return Text(snapshot.data as String);
+        } else {
+          return Text('Error: ${snapshot.error}');
+        }
+      },
+    ));
   }
 }
