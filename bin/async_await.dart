@@ -1,3 +1,5 @@
+import 'dart:io';
+
 void main(List<String> args) {
   processData();
 }
@@ -8,9 +10,8 @@ void processData() async {
     int age = await getDataAge();
 
     print('My name is $name and $age years old');
-  } catch (e) {
-    print('error');
-  }
+  } on HttpException {
+  } on IOException {}
 }
 
 Future<String> getDataName() async {
