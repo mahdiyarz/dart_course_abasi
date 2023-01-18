@@ -12,3 +12,6 @@ environment:
 dev_dependencies:
   lints: ^2.0.0
   test: ^1.16.0
+dependencies:
+  barcode_image: ^2.0.2
+  dart_telegram_bot: ^1.0.0
